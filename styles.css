@@ -1,0 +1,183 @@
+:root {
+  --primary-color: #2f5d62;
+  --light-color: #cfe3e0;
+  --background-color: #f7f5f0;
+  --text-color: #2b2b2b;
+  --muted-color: #6b7a7a;
+  --spacing: 16px;
+}
+
+/* padding and border are included in the width of every element */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  font-family: "Merriweather", serif;
+  line-height: 1.8;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+h1, h2, h3 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* only the top border is kept, so the hr looks like a row of dots */
+hr {
+  border: dotted var(--muted-color) 6px;
+  border-bottom: none;
+  width: 60px;
+  margin: 40px auto;
+}
+
+.site-header,
+.navbar {
+  background-color: var(--primary-color);
+}
+
+.site-header {
+  padding: 40px var(--spacing) 8px;
+}
+
+.site-header h1 {
+  margin: 0;
+  color: white;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--light-color);
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+  padding: var(--spacing);
+}
+
+.navbar a {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: var(--light-color);
+  text-decoration: underline;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--spacing);
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.card {
+  padding: 24px;
+  text-align: left;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  transition: border-color 0.3s;
+}
+
+.card:hover {
+  border-color: var(--primary-color);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.dates {
+  color: var(--muted-color);
+  font-size: 0.875rem;
+}
+
+.hobbies-list {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  color: white;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #57b3a6;
+}
+
+footer {
+  margin-top: 40px;
+  padding: 24px var(--spacing);
+  color: white;
+  background-color: var(--primary-color);
+}
+
+footer p {
+  margin: 0;
+}
+
+/* mobile first: everything above is for small screens, this adds the wide layout */
+@media (min-width: 768px) {
+  .about {
+    flex-direction: row;
+    justify-content: center;
+    gap: 48px;
+    text-align: left;
+  }
+
+  .two-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .three-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
